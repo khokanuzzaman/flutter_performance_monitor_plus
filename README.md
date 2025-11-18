@@ -7,6 +7,9 @@ In-app performance monitor overlay for Flutter. See FPS, frame times, rebuilds, 
 - Track rebuild churn, memory, and CPU in debug/profile without opening DevTools.
 - Capture HTTP traffic automatically (or log manually) alongside UI performance.
 
+## Docs & Wiki
+- 📚 Wiki: https://github.com/khokanuzzaman/flutter_performance_monitor_plus/wiki
+
 ## Features
 - Draggable bubble with quick stats; tap to expand a detailed panel.
 - Double-tap the bubble to dock it to the screen edge (peek handle); tap handle to reveal.
