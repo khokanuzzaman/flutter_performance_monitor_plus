@@ -1,0 +1,1 @@
+double? getCpuUsagePercent() => null;

@@ -1,0 +1,44 @@
+# Dart & Flutter
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+flutter_export_environment.sh
+
+# Platform & tooling
+.gradle/
+android/.gradle/
+android/local.properties
+android/key.properties
+**/Pods/
+ios/Flutter/Generated.xcconfig
+ios/Flutter/flutter_export_environment.sh
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/ephemeral/
+macos/.symlinks/
+
+# Project metadata
+.metadata
+.DS_Store
+
+# IDE
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+
+# Output & reports
+coverage/
+**/build/
+.flutter-plugins-dependencies
+
+# Keys
+*.keystore
+*.jks
+
+# Generated plugin registrants
+**/GeneratedPluginRegistrant.*
