@@ -1,6 +1,6 @@
 name: flutter_performance_monitor_plus
 description: "Flutter in-app performance monitor overlay: live FPS, jank, build/raster times, rebuilds, memory, CPU, and network logging via draggable bubble."
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/khokanuzzaman/flutter_performance_monitor_plus
 repository: https://github.com/khokanuzzaman/flutter_performance_monitor_plus
 issue_tracker: https://github.com/khokanuzzaman/flutter_performance_monitor_plus/issues

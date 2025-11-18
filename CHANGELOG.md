@@ -6,3 +6,7 @@
 
 * Fixed analyzer warnings (removed unused import, dropped redundant null check, replaced deprecated `withOpacity` with `withValues`).
 * Added repo metadata and screenshots/GIF; README updates for screenshots and pub.dev SEO.
+
+## 0.0.3
+
+* dart format cleanup for pana compliance (addresses README/pana formatting scores).
