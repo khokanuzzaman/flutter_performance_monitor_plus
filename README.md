@@ -112,6 +112,10 @@ The sample app shows FPS/rebuild churn via animation, a sample HTTP call, the ov
 
 ## Screenshots
 
+Animated demo (GIF):
+
+![Demo](https://raw.githubusercontent.com/khokanuzzaman/flutter_performance_monitor_plus/main/screenshots/demo.gif)
+
 Collapsed bubble (peek/edge dock):
 
 ![Collapsed bubble](https://raw.githubusercontent.com/khokanuzzaman/flutter_performance_monitor_plus/main/screenshots/monitor-plus-hide.jpeg)
