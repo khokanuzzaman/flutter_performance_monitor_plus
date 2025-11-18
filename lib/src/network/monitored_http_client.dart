@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:http/http.dart' as http;
 
 import '../core/performance_monitor_controller.dart';
-import 'network_log_entry.dart';
 
 /// A drop-in HTTP client that reports request metadata to the performance monitor.
 class MonitoredHttpClient extends http.BaseClient {

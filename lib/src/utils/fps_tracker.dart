@@ -1,8 +1,6 @@
 import 'dart:collection';
 import 'dart:ui';
 
-import 'package:flutter/scheduler.dart';
-
 /// Lightweight FPS tracker using a sliding window.
 class FpsTracker {
   FpsTracker({this.window = const Duration(seconds: 1)});

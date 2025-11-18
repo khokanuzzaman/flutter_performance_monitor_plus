@@ -129,7 +129,7 @@ class PerformanceMonitorPanel extends StatelessWidget {
                           child: Text(
                             'No requests yet',
                             style: TextStyle(
-                              color: theme.textColor.withOpacity(0.7),
+                              color: theme.textColor.withValues(alpha: 0.7),
                             ),
                           ),
                         )
@@ -154,7 +154,7 @@ class PerformanceMonitorPanel extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
       decoration: BoxDecoration(
-        color: theme.bubbleColor.withOpacity(0.7),
+        color: theme.bubbleColor.withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(color: theme.borderColor),
       ),
@@ -165,7 +165,7 @@ class PerformanceMonitorPanel extends StatelessWidget {
           Text(
             label,
             style: TextStyle(
-              color: theme.textColor.withOpacity(0.8),
+              color: theme.textColor.withValues(alpha: 0.8),
               fontSize: 12,
             ),
           ),
@@ -208,7 +208,7 @@ class _NetworkRow extends StatelessWidget {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
             decoration: BoxDecoration(
-              color: statusColor.withOpacity(0.15),
+              color: statusColor.withValues(alpha: 0.15),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
@@ -230,7 +230,7 @@ class _NetworkRow extends StatelessWidget {
                 Text(
                   '$timeString • ${log.duration.inMilliseconds} ms',
                   style: TextStyle(
-                    color: theme.textColor.withOpacity(0.7),
+                    color: theme.textColor.withValues(alpha: 0.7),
                     fontSize: 12,
                   ),
                 ),

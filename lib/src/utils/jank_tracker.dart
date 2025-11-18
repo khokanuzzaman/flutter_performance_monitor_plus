@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-import 'package:flutter/scheduler.dart';
 import 'dart:ui';
 
 /// Tracks frames that exceed the frame budget (best-effort jank detector).

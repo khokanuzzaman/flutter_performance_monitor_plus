@@ -254,6 +254,7 @@ class _MetricsSnapshot extends StatelessWidget {
     if (launched) return;
 
     Clipboard.setData(ClipboardData(text: _metricsDocs.toString()));
+    if (!context.mounted) return;
     final messenger = ScaffoldMessenger.maybeOf(context);
     messenger?.showSnackBar(
       const SnackBar(

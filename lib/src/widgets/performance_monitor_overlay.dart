@@ -324,7 +324,7 @@ class _PeekHandle extends StatelessWidget {
       right: side == _PeekSide.left ? const Radius.circular(12) : Radius.zero,
     );
     return Material(
-      color: theme.bubbleColor.withOpacity(0.8),
+      color: theme.bubbleColor.withValues(alpha: 0.8),
       borderRadius: radius,
       child: InkWell(
         borderRadius: radius,
@@ -356,6 +356,7 @@ Future<void> _openDocs(BuildContext context) async {
   }
   if (launched) return;
 
+  if (!context.mounted) return;
   final messenger = ScaffoldMessenger.maybeOf(context);
   messenger?.showSnackBar(
     const SnackBar(

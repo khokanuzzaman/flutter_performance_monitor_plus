@@ -1,11 +1,8 @@
-library flutter_performance_monitor_plus;
-
 import 'package:flutter/material.dart';
 
 import 'src/core/performance_data_models.dart';
 import 'src/core/performance_monitor_config.dart';
 import 'src/core/performance_monitor_controller.dart';
-import 'src/network/monitored_http_client.dart';
 import 'src/widgets/performance_monitor_overlay.dart';
 
 export 'src/core/performance_data_models.dart';
@@ -40,9 +37,6 @@ class PerformanceMonitorPlus extends StatelessWidget {
     PerformanceMonitorMode mode = PerformanceMonitorMode.visible,
   }) {
     final overlayState = Overlay.of(context, rootOverlay: true);
-    if (overlayState == null) {
-      throw StateError('No Overlay found in the given context.');
-    }
     final controller = PerformanceMonitorController(config: config);
     controller.markAsPrimary();
     controller.setMode(mode);
