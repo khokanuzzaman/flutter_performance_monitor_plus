@@ -47,8 +47,11 @@ class PerformanceMonitorPanel extends StatelessWidget {
                   const Spacer(),
                   IconButton(
                     onPressed: onOpenDocs,
-                    icon:
-                        Icon(Icons.help_outline, size: 18, color: theme.textColor),
+                    icon: Icon(
+                      Icons.help_outline,
+                      size: 18,
+                      color: theme.textColor,
+                    ),
                   ),
                   IconButton(
                     onPressed: onCollapse,
@@ -69,14 +72,18 @@ class PerformanceMonitorPanel extends StatelessWidget {
                   _metricTile(
                     'Build',
                     '${metrics.averageBuildTimeMs.toStringAsFixed(1)} ms',
-                    color:
-                        _timeSeverityColor(metrics.averageBuildTimeMs, theme),
+                    color: _timeSeverityColor(
+                      metrics.averageBuildTimeMs,
+                      theme,
+                    ),
                   ),
                   _metricTile(
                     'Raster',
                     '${metrics.averageRasterTimeMs.toStringAsFixed(1)} ms',
-                    color:
-                        _timeSeverityColor(metrics.averageRasterTimeMs, theme),
+                    color: _timeSeverityColor(
+                      metrics.averageRasterTimeMs,
+                      theme,
+                    ),
                   ),
                   _metricTile('Rebuilds', '${metrics.rebuildsPerSecond}/s'),
                   _metricTile(
@@ -97,10 +104,7 @@ class PerformanceMonitorPanel extends StatelessWidget {
                         : 'n/a',
                     color: _cpuColor(metrics.cpuUsagePercent, theme),
                   ),
-                  _metricTile(
-                    'Hot Reloads',
-                    metrics.hotReloadCount.toString(),
-                  ),
+                  _metricTile('Hot Reloads', metrics.hotReloadCount.toString()),
                   _metricTile(
                     'Hot Restarts',
                     metrics.hotRestartCount.toString(),
@@ -258,7 +262,10 @@ PerformanceHealth _healthFromMetrics(PerformanceMetrics metrics) {
   return PerformanceHealth.smooth;
 }
 
-Color _healthColor(PerformanceHealth health, PerformanceMonitorThemeData theme) {
+Color _healthColor(
+  PerformanceHealth health,
+  PerformanceMonitorThemeData theme,
+) {
   switch (health) {
     case PerformanceHealth.smooth:
       return theme.successColor;

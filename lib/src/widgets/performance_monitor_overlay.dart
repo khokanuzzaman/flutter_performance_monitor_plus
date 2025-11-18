@@ -111,8 +111,7 @@ class _PerformanceMonitorOverlayState extends State<PerformanceMonitorOverlay> {
 
   void _snapToEdge(Size size) {
     final current = _offset ?? _initialOffset(size);
-    final side =
-        current.dx < size.width / 2 ? _PeekSide.left : _PeekSide.right;
+    final side = current.dx < size.width / 2 ? _PeekSide.left : _PeekSide.right;
     final y = current.dy.clamp(8.0, (size.height - 80).clamp(8.0, size.height));
     final x = side == _PeekSide.left ? -12.0 : size.width - 20.0;
     setState(() {
@@ -153,16 +152,16 @@ class _PerformanceMonitorOverlayState extends State<PerformanceMonitorOverlay> {
 
   Offset _initialPeekOffset(Size size, _PeekSide side) {
     final base = _initialOffset(size);
-    final y =
-        base.dy.clamp(8.0, (size.height - 80).clamp(8.0, size.height)).toDouble();
+    final y = base.dy
+        .clamp(8.0, (size.height - 80).clamp(8.0, size.height))
+        .toDouble();
     final x = side == _PeekSide.left ? -12.0 : size.width - 20.0;
     return Offset(x, y);
   }
 
   @override
   Widget build(BuildContext context) {
-    final textDirection =
-        Directionality.maybeOf(context) ?? TextDirection.ltr;
+    final textDirection = Directionality.maybeOf(context) ?? TextDirection.ltr;
     return Directionality(
       textDirection: textDirection,
       child: PerformanceMonitorScope(
@@ -206,7 +205,9 @@ class _PerformanceMonitorOverlayState extends State<PerformanceMonitorOverlay> {
           child: ValueListenableBuilder<bool>(
             valueListenable: _controller.isExpanded,
             builder: (context, expanded, __) {
-              final overlayWidth = expanded ? 320.0 : (_peekSide != null ? 28.0 : 160.0);
+              final overlayWidth = expanded
+                  ? 320.0
+                  : (_peekSide != null ? 28.0 : 160.0);
               return GestureDetector(
                 behavior: HitTestBehavior.opaque,
                 onPanStart: (_) {
@@ -223,33 +224,33 @@ class _PerformanceMonitorOverlayState extends State<PerformanceMonitorOverlay> {
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
                     child: expanded
-                            ? _ExpandedOverlay(
-                                key: const ValueKey('expanded'),
-                                controller: _controller,
-                                metrics: metrics,
-                                theme: theme,
-                                width: 320,
-                              )
-                            : (_peekSide != null
-                                ? _PeekHandle(
-                                    key: const ValueKey('peek'),
-                                    theme: theme,
-                                    side: _peekSide!,
-                                    onTap: () => _togglePeek(availableSize),
-                                    onLongPress: () => _openDocs(context),
-                                  )
-                                : PerformanceMonitorBubble(
-                                    key: const ValueKey('collapsed'),
-                                    metrics: metrics,
-                                    theme: theme,
-                                    health: health,
-                                    onTap: () {
-                                      setState(() => _peekSide = null);
-                                      _controller.toggleExpanded();
-                                    },
-                                    onLongPress: () => _openDocs(context),
-                                    onDoubleTap: () => _togglePeek(availableSize),
-                                  )),
+                        ? _ExpandedOverlay(
+                            key: const ValueKey('expanded'),
+                            controller: _controller,
+                            metrics: metrics,
+                            theme: theme,
+                            width: 320,
+                          )
+                        : (_peekSide != null
+                              ? _PeekHandle(
+                                  key: const ValueKey('peek'),
+                                  theme: theme,
+                                  side: _peekSide!,
+                                  onTap: () => _togglePeek(availableSize),
+                                  onLongPress: () => _openDocs(context),
+                                )
+                              : PerformanceMonitorBubble(
+                                  key: const ValueKey('collapsed'),
+                                  metrics: metrics,
+                                  theme: theme,
+                                  health: health,
+                                  onTap: () {
+                                    setState(() => _peekSide = null);
+                                    _controller.toggleExpanded();
+                                  },
+                                  onLongPress: () => _openDocs(context),
+                                  onDoubleTap: () => _togglePeek(availableSize),
+                                )),
                   ),
                 ),
               );

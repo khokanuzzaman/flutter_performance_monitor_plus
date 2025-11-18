@@ -16,9 +16,13 @@ class _CpuSnapshot {
 
 _CpuSnapshot? _readSnapshot() {
   try {
-    final statLine =
-        File('/proc/stat').readAsLinesSync().firstWhere((line) => line.startsWith('cpu '));
-    final cpuParts = statLine.split(RegExp(r'\s+')).where((p) => p.isNotEmpty).toList();
+    final statLine = File(
+      '/proc/stat',
+    ).readAsLinesSync().firstWhere((line) => line.startsWith('cpu '));
+    final cpuParts = statLine
+        .split(RegExp(r'\s+'))
+        .where((p) => p.isNotEmpty)
+        .toList();
     if (cpuParts.length < 5) return null;
     final user = int.parse(cpuParts[1]);
     final nice = int.parse(cpuParts[2]);
@@ -31,8 +35,10 @@ _CpuSnapshot? _readSnapshot() {
     final total = user + nice + system + idle + iowait + irq + softirq + steal;
 
     final selfStat = File('/proc/self/stat').readAsStringSync();
-    final selfParts =
-        selfStat.split(RegExp(r'\s+')).where((p) => p.isNotEmpty).toList();
+    final selfParts = selfStat
+        .split(RegExp(r'\s+'))
+        .where((p) => p.isNotEmpty)
+        .toList();
     // utime (14) and stime (15) are process CPU times in jiffies.
     if (selfParts.length < 16) return null;
     final utime = int.parse(selfParts[13]);

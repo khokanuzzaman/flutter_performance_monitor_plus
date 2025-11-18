@@ -29,8 +29,10 @@ class PerformanceMetrics {
   final double averageRasterTimeMs;
   final int rebuildsPerSecond;
   final double? memoryInMB;
+
   /// Best-effort count of frames that exceeded the frame budget.
   final int jankPerSecond;
+
   /// Best-effort CPU utilization for the process (0-100), or null if unavailable.
   final double? cpuUsagePercent;
   final int hotReloadCount;

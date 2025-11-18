@@ -50,8 +50,11 @@ class PerformanceMonitorBubble extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-                  _metric('FPS', metrics.fps.toStringAsFixed(0),
-                      color: severityColor),
+                  _metric(
+                    'FPS',
+                    metrics.fps.toStringAsFixed(0),
+                    color: severityColor,
+                  ),
                 ],
               ),
               const SizedBox(height: 6),
@@ -101,7 +104,10 @@ class PerformanceMonitorBubble extends StatelessWidget {
   }
 }
 
-Color _healthColor(PerformanceHealth health, PerformanceMonitorThemeData theme) {
+Color _healthColor(
+  PerformanceHealth health,
+  PerformanceMonitorThemeData theme,
+) {
   switch (health) {
     case PerformanceHealth.smooth:
       return theme.successColor;

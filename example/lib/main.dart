@@ -27,7 +27,9 @@ class DemoApp extends StatelessWidget {
       title: 'Performance Monitor Plus',
       theme: ThemeData(
         brightness: Brightness.light,
-        scaffoldBackgroundColor: const Color(0xFFF3F4F6), // light gray background
+        scaffoldBackgroundColor: const Color(
+          0xFFF3F4F6,
+        ), // light gray background
         colorScheme: ColorScheme.fromSeed(
           seedColor: Colors.indigo,
           brightness: Brightness.light,
@@ -158,10 +160,7 @@ class _DemoHomePageState extends State<DemoHomePage>
               ),
             ),
             const Spacer(),
-            _MetricsSnapshot(
-              metrics: _latestMetrics,
-              statusText: _status,
-            ),
+            _MetricsSnapshot(metrics: _latestMetrics, statusText: _status),
             const Text(
               'Drag the bubble to reposition. Tap it to expand the live panel.',
             ),
@@ -177,8 +176,9 @@ class _MetricsSnapshot extends StatelessWidget {
 
   final PerformanceMetrics? metrics;
   final String statusText;
-  static final Uri _metricsDocs =
-      Uri.parse('https://docs.flutter.dev/perf/metrics');
+  static final Uri _metricsDocs = Uri.parse(
+    'https://docs.flutter.dev/perf/metrics',
+  );
 
   String _fmtDouble(double? value, {int fractionDigits = 1}) {
     if (value == null) return 'n/a';
@@ -236,9 +236,7 @@ class _MetricsSnapshot extends StatelessWidget {
   }
 
   Widget _chip(String label, String value) {
-    return Chip(
-      label: Text('$label: $value'),
-    );
+    return Chip(label: Text('$label: $value'));
   }
 
   Future<void> _openDocs(BuildContext context) async {
@@ -258,8 +256,9 @@ class _MetricsSnapshot extends StatelessWidget {
     final messenger = ScaffoldMessenger.maybeOf(context);
     messenger?.showSnackBar(
       const SnackBar(
-        content:
-            Text('Could not open Flutter performance metrics guide. Link copied.'),
+        content: Text(
+          'Could not open Flutter performance metrics guide. Link copied.',
+        ),
       ),
     );
   }
