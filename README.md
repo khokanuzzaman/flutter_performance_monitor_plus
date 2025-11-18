@@ -2,6 +2,11 @@
 
 In-app performance monitor overlay for Flutter. See FPS, frame times, rebuilds, memory (best-effort), CPU, and network requests without leaving your app.
 
+## Why
+- Spot jank early with live FPS/build/raster timing overlays.
+- Track rebuild churn, memory, and CPU in debug/profile without opening DevTools.
+- Capture HTTP traffic automatically (or log manually) alongside UI performance.
+
 ## Features
 - Draggable bubble with quick stats; tap to expand a detailed panel.
 - Double-tap the bubble to dock it to the screen edge (peek handle); tap handle to reveal.
@@ -109,8 +114,8 @@ The sample app shows FPS/rebuild churn via animation, a sample HTTP call, the ov
 
 Collapsed bubble (peek/edge dock):
 
-![Collapsed bubble](screenshots/monitor-plus-hide.jpeg)
+![Collapsed bubble](https://raw.githubusercontent.com/khokanuzzaman/flutter_performance_monitor_plus/main/screenshots/monitor-plus-hide.jpeg)
 
 Expanded panel:
 
-![Expanded panel](screenshots/monitor-plus-extended.jpeg)
+![Expanded panel](https://raw.githubusercontent.com/khokanuzzaman/flutter_performance_monitor_plus/main/screenshots/monitor-plus-extended.jpeg)
