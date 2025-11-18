@@ -107,14 +107,10 @@ The sample app shows FPS/rebuild churn via animation, a sample HTTP call, the ov
 
 ## Screenshots
 
-Animated demo (GIF):
-
-![Demo](screenshots/demo.gif)
-
 Collapsed bubble (peek/edge dock):
 
-![Collapsed bubble](https://example.com/your-gif-or-image-collapsed)
+![Collapsed bubble](screenshots/monitor-plus-hide.jpeg)
 
 Expanded panel:
 
-![Expanded panel](https://example.com/your-gif-or-image-expanded)
+![Expanded panel](screenshots/monitor-plus-extended.jpeg)
